@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerDataHandler : MonoBehaviour
 {
     PlayerData data;
+    SettingsList settings;
 
 
     void Start()
     {
+        settings = new SettingsList();
         data = new PlayerData(20);
     }
 
@@ -19,11 +21,13 @@ public class PlayerDataHandler : MonoBehaviour
     }
 
     public void AddCoin(){
-        data.coins += 1;
-        Debug.Log("Coin amount - " + data.coins);
+        data.Coins += 1;
+        CreateJson();
     }
 
     public void CreateJson(){
+        string JsonedData = JsonUtility.ToJson(data);
+        Debug.Log(JsonedData);
         // TODO
     }
 }
