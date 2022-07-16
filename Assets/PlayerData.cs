@@ -16,8 +16,8 @@ public class PlayerData
 [Serializable]
 public class SettingsList {
     public float Volume = 0;
-    public int Resolution;
-    public bool IsFullscreen;
+    public Resolution Resolution = Resolutions.GetResolutionByCode(ResolutionCode.R1920x1080);
+    public bool IsFullscreen = true;
     public int Quality;
     public ControlsList ControlsList;
 
@@ -25,7 +25,7 @@ public class SettingsList {
 
     }
 
-    public SettingsList(float volume, int resolution, bool isFullscreen, int quality, ControlsList controlsList){
+    public SettingsList(float volume, Resolution resolution, bool isFullscreen, int quality, ControlsList controlsList){
         Volume = volume;
         Resolution = resolution;
         IsFullscreen = isFullscreen;

@@ -17,7 +17,6 @@ public class PlayerDataHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void AddCoin(){
@@ -28,6 +27,5 @@ public class PlayerDataHandler : MonoBehaviour
     public void CreateJson(){
         string JsonedData = JsonUtility.ToJson(data);
         Debug.Log(JsonedData);
-        // TODO
     }
 }
