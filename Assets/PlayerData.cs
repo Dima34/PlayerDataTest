@@ -5,11 +5,20 @@ using System;
 
 public class PlayerData
 {
-    public int Coins;
+    public int Coins = 0;
     public SettingsList Settings = new SettingsList();
+
+    public PlayerData(){
+
+    }
 
     public PlayerData(int coins){
         Coins = coins; 
+    }
+
+    public void Print(){
+        string jsonedData = JsonUtility.ToJson(this);
+        Debug.Log("JSON - " + jsonedData);
     }
 }
 
